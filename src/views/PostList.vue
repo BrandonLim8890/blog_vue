@@ -24,7 +24,7 @@
 		},
 		methods: {},
 		async created() {
-			let res = await axios.get('http://localhost:3000/posts')
+			let res = await axios.get('https://intense-woodland-21613.herokuapp.com/posts')
 			this.posts = res.data.posts
 		}
 	}

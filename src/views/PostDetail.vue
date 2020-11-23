@@ -68,7 +68,7 @@
 		},
 		methods: {
 			async addComment() {
-				let res = await axios.post(`http://localhost:3000/posts/${this.id}`, this.comment)
+				let res = await axios.post(`https://intense-woodland-21613.herokuapp.com/posts/${this.id}`, this.comment)
 				this.comments = res.data.comments
 				this.newComment = false
 				this.comment.author = ''
@@ -76,7 +76,7 @@
 			},
 			async deleteComment(comment) {
 				let id = comment._id
-				let res = axios.delete('http://localhost:3000/posts/comments/' + id)
+				let res = axios.delete('https://intense-woodland-21613.herokuapp.com/posts/comments/' + id)
 				console.log('comment ' + id + 'has been deleted')
 				if (res) this.$router.go(0)
 			},
@@ -87,23 +87,17 @@
 				})
 			},
 			async deletePost() {
-				await axios.delete(`http://localhost:3000/posts/${this.id}`)
+				await axios.delete(`https://intense-woodland-21613.herokuapp.com/posts/${this.id}`)
 				console.log('successfully deleted')
 				this.$router.push({ name: 'PostList' })
 			}
 		},
-		created() {
-			axios
-				.get(`http://localhost:3000/posts/${this.id}`)
-				.then((res) => {
-					this.post = res.data.post
-					this.comments = res.data.comments
-					this.title = res.data.title
-					this.author = this.post.author
-				})
-				.catch((err) => {
-					console.log(err)
-				})
+		async created() {
+			let res = await axios.get(`https://intense-woodland-21613.herokuapp.com/posts/${this.id}`)
+			this.post = res.data.post
+			this.comments = res.data.comments
+			this.title = res.data.title
+			this.author = this.post.author
 		}
 	}
 </script>

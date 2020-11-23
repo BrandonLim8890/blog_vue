@@ -48,7 +48,7 @@
 		},
 		async created() {
 			try {
-				let res = await axios.get('http://localhost:3000/posts/create')
+				let res = await axios.get('https://intense-woodland-21613.herokuapp.com/posts/create')
 				this.authors = res.data.users
 				this.author = typeof this.previousPost === 'undefined' ? this.authors[0]._id : this.previousPost.author._id
 			} catch (err) {

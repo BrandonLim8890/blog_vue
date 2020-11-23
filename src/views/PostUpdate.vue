@@ -43,7 +43,7 @@
 		},
 		methods: {
 			async updatePost(post) {
-				await axios.put(`http://localhost:3000/posts/${this.id}/update`, post)
+				await axios.put(`https://intense-woodland-21613.herokuapp.com/posts/${this.id}/update`, post)
 				this.$router.go(-1)
 			}
 		}
