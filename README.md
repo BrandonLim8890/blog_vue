@@ -1,4 +1,6 @@
 # blog_vue
+Front end for Blog Backend.
+Website https://brandonlim8890.github.io/blog_vue/
 
 ## Project setup
 ```
