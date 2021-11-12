@@ -7,6 +7,7 @@ import Axios from 'axios'
 Vue.config.productionTip = false
 
 const token = localStorage.getItem('token')
+require('dotenv').config()
 if (token) Axios.defaults.headers['authorization'] = 'Bearer ' + token
 
 Vue.use(Vuex)

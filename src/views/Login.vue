@@ -54,7 +54,7 @@
 					username: this.username,
 					password: this.password
 				}
-				let res = await axios.post('https://intense-woodland-21613.herokuapp.com/login', user)
+				let res = await axios.post(`https://intense-woodland-21613.herokuapp.com/login`, user)
 				const token = res.data.token
 				if (token) {
 					localStorage.setItem('token', token)

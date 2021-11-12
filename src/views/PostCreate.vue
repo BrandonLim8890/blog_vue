@@ -28,7 +28,7 @@
 		},
 		methods: {
 			async newPost(post) {
-				await axios.post('https://intense-woodland-21613.herokuapp.com/posts/create', post)
+				await axios.post(`https://intense-woodland-21613.herokuapp.com/posts/create`, post)
 				this.$router.push({ name: 'PostList' })
 			}
 		}

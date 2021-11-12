@@ -22,10 +22,14 @@
 				posts: []
 			}
 		},
-		methods: {},
-		async created() {
-			let res = await axios.get('https://intense-woodland-21613.herokuapp.com/posts')
-			this.posts = res.data.posts
+		methods: {
+			async fetchData() {
+				let res = await axios.get(`https://intense-woodland-21613.herokuapp.com/posts`)
+				this.posts = res.data.posts
+			}
+		},
+		created() {
+			this.fetchData()
 		}
 	}
 </script>
